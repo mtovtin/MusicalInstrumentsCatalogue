@@ -1,0 +1,31 @@
+
+
+<h1 align="center">
+   <%= @musical_instrument.name%>
+ </h1>
+ <br>
+ <div class="row" style="border-style: outset;">
+ <div class="col-md-5" >
+ <%= musical_instrument_imaage @musical_instrument.image%>
+ </div>
+ <div class="col-md-7" style="font-size:25px;">
+ <b>Категорія:</b>
+   <%@musical_instrument.categories.each do |category|%>
+     <%= link_to category.name, category_path(category),class: "badge bg-warning"%>
+   <%end%>
+
+<br>
+<b>Ціна:</b>
+   <%= @musical_instrument.price%>
+   $
+   <br>
+   <b>Виробник:</b>
+   <%= @musical_instrument.manufacturer%>
+   <p> <b>Опис:</b>
+   <%= @musical_instrument.description%>
+ </p>
+   </div>
+   </div>
+ 
+ <br>
+ 

@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "mystyle.css" %>
+<div class="catalog">
+
+   <div class="row">
+     <div class="col-12 col-md-2 col-lg-3">
+       <% if @categories %>
+         <ul style="font-size: 130%; list-style-type: circle;">
+           <% @categories.each do |category|%>
+           <% if @category && category.id == @category.id %>
+             <li><%=category.name%></li>
+           <%else%>
+             <li><%=render category%></li>
+             <%end%>
+
+           <%end%>
+         </ul>
+       <%end%>
+       <%= select_tag 'manufacturer', options_for_select(@musical_instruments.collect{ |u| [u.manufacturer, u.id] })%>
+
+     </div>
+     <div class="col-12 col-md-10 col-lg-9 row" id="musical_instruments">
+
+       <%= render @musical_instruments%>
+
+     </div>
+   </div>
+     <div id="paginations">
+       <%= render "pages/paginations" %>
+     </div>
+ </div>

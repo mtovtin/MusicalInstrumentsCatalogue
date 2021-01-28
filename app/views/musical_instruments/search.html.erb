@@ -1,0 +1,11 @@
+<h1>Результати пошуку за "<%= @search %>"
+ </h1>
+ <h5>Кількість результатів
+   <%= @musical_instruments.count %></h5>
+   <div class="row" id="musical_instruments">
+
+   <%= render @musical_instruments%>
+   </div>
+   <% if @count > $PER_PAGE%>
+     <%= render "paginations" %>
+   <%end%>

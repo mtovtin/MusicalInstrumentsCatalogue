@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "mystyle.css" %>
+<nav class="navbar navbar-light bg-light ">
+<div class="d-flex justify-content-start">
+   
+
+<button class="btn btn-outline-warning button" type="button"> <%= link_to root_path, class:"navbar-brand"  do %>
+      Головна
+ <%end%></button> 
+ <button class="btn btn-outline-warning button" type="button"> <%= link_to musical_instruments_path, class:"navbar-brand" do %>
+    Каталог
+<%end%></button> 
+<button class="btn btn-outline-warning button" type="button"> <%= link_to manus_index_path, class:"navbar-brand" do %> Виробники
+<%end%></button> 
+
+ </div>
+ <%= form_tag search_path, method: :get do %>
+  <%= text_field_tag(
+      :search,
+      params[:search],
+      placeholder: "Пошук...",
+      class: "form-inline"
+        ) %>
+              <button class="btn btn-outline-warning " type="submit">Знайти</button>
+      <% end %>
+      
+     
+            
+ </nav>

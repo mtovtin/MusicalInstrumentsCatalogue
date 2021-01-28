@@ -1,0 +1,5 @@
+console.log("js work!")
+catalog = document.getElementById("musical_instruments")
+catalog.innerHTML = '<%=j render(MusicalInstrumentComponent.with_collection(@musical_instruments))%>'
+pagination = document.getElementById("paginations")
+pagination.innerHTML= '<%=j render "pages/paginations" %>'

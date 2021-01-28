@@ -1,0 +1,19 @@
+<div class="col-12 col-md-5 col-lg-4">
+   <div class="card text-center m-3 " style="width: 17rem; height: 19rem; ">
+   <%musical_instrument.categories.each do |category|%>
+    <%= link_to category.name, category_path(category),class: "badge bg-warning"%>
+     <%= link_to musical_instrument_path(musical_instrument) do %>
+     <%= musical_instrument_image(musical_instrument.image) %> 
+     <p></p>
+     <div class="card-body">
+
+       <%= musical_instrument.name%>
+       <div class="">
+
+         <%end%>
+       </div>
+     </div>
+   <%end%>
+ </div>
+ </div>
+ 
