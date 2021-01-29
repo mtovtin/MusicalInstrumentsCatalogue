@@ -7,13 +7,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-import {pagination_js,change_manufacturer} from "./custom"
- window.pagination_js = pagination_js
+
  import "bootstrap"
  import "../stylesheets/application";
-require("trix")
-require("@rails/actiontext")
+ 
+ import {pagination_js} from "./custom"
+ window.pagination_js = pagination_js
+ 

@@ -8,7 +8,12 @@ class MusicalInstrumentsController < ApplicationController
      @musical_instruments = @musical_instruments.page(page).per($PER_PAGE).with_attached_image.includes(:categories)
    end
 
- 
+   def set_page
+    @musical_instruments = MusicalInstrument.all
+    @count = @musical_instruments.count
+    @musical_instruments = @musical_instruments.page(page).per($PER_PAGE).with_attached_image.includes(:categories)
+    respond_to :js
+  end
     
    
       def show
